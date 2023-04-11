@@ -30,7 +30,6 @@ public class AccountController {
 		return "createAccount";
 	}
 
-	
 	/**
 	 * 新規アカウント作成
 	 *
@@ -40,6 +39,7 @@ public class AccountController {
 	 * @param model
 	 * @return ホーム画面に遷移
 	 */
+	
 	
 	@Transactional
 	@RequestMapping(value = "/createAccount", method = RequestMethod.POST)
@@ -54,20 +54,19 @@ public class AccountController {
 		if(password.length() >=8 && password.matches("^[A-Za-z0-9]+$"))
 		{
 			if(password.equals(passwordForCheck)) {
+				// パラメータで受け取ったアカウント情報をDtoに格納する。
+				UserInfo userInfo = new UserInfo();
+				userInfo.setEmail(email);
+				userInfo.setPassword(password);
+				usersService.registUser(userInfo);
+				return "redirect:/login";
 			}else {
 				model.addAttribute("errorMessage", "パスワードが一致しません。");
+				return "createAccount";
 			}
 		}else {
 			model.addAttribute("errorMessage", " 半角英数字8文字以上で入力してください。");
-			
+			return "createAccount";
 		}
-
-		// パラメータで受け取ったアカウント情報をDtoに格納する。
-		UserInfo userInfo = new UserInfo();
-		userInfo.setEmail(email);
-		userInfo.setPassword(password);
-		usersService.registUser(userInfo);
-		return "redirect:/login";
 	}
-
 }
