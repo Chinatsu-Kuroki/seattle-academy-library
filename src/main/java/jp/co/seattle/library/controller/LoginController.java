@@ -28,7 +28,6 @@ public class LoginController {
 		return "login"; // jspファイル名
 	}
 
-	
 	/**
 	 * ログイン処理
 	 *
@@ -44,11 +43,11 @@ public class LoginController {
 		UserInfo selectedUserInfo = usersService.selectUserInfo(email, password);
 
 		// ユーザーが存在すればログイン、存在しなければエラー(タスク２)
-		if(!ObjectUtils.isEmpty(selectedUserInfo)) {
+		if (!ObjectUtils.isEmpty(selectedUserInfo)) {
 			return "redict:/home";
 		} else {
-			model.addAttribute("errorMessage","ユーザーが存在しません。");
-			return "redirect:/home";
+			model.addAttribute("errorMessage", "ユーザーが存在しません。");
+			return "login";
 		}
 	}
 }
