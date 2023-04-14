@@ -38,6 +38,7 @@ public class BooksService {
 
 		return getedBookList;
 	}
+	
 
 	/**
 	 * 書籍IDに紐づく書籍詳細情報を取得する
