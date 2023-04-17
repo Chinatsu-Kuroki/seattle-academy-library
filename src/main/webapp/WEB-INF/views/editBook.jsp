@@ -55,13 +55,10 @@
                         </c:if>
                         <span>書籍名</span><span class="care care2">必須</span>
                             <input type="text" name="title" value="${bookInfo.title}">
-                            <input type="text" name="title" autocomplete="off">
-                        </c:if>
                     </div>
                     <div>
                         <span>著者名</span><span class="care care2">必須</span>
                             <input type="text" name="author" value="${bookInfo.author}">
-                        </c:if>
                     </div>
                     <div>
                         <span>出版社</span><span class="care care2">必須</span>
@@ -91,3 +88,4 @@
     </main>
 </body>
 </html>
+
