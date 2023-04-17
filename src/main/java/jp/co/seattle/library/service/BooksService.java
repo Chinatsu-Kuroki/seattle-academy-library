@@ -33,7 +33,7 @@ public class BooksService {
 
 		// TODO 書籍名の昇順で書籍情報を取得するようにSQLを修正（タスク３）
 		List<BookInfo> getedBookList = jdbcTemplate.query(
-				"SELECT * FROM books ORDER BY title",
+				"SELECT title, author, publisher, publish_date, thumbnail_url, thumnail_name FROM books ORDER BY title",
 				new BookInfoRowMapper());
 
 		return getedBookList;
