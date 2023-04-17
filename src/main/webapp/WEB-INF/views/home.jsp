@@ -33,7 +33,7 @@
             </c:if>
             <div>
                 <div class="booklist">
-                    <c:forEach var="bookInfo" items="${booklist}">
+                    <c:forEach var="bookInfo" items="${bookList}">
                         <div class="books">
                             <form method="get" class="book_thumnail" action="editBook">
                                 <a href="javascript:void(0)" onclick="this.parentNode.submit();"> <c:if test="${empty bookInfo.thumbnail}">
