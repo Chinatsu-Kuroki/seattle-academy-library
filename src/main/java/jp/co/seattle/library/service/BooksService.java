@@ -80,6 +80,7 @@ public class BooksService {
 		jdbcTemplate.update(sql, bookId);
 	}
 	
+	
 	/**
 	 * 書籍情報を更新する
 	 * 
