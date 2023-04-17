@@ -44,10 +44,10 @@
                                 </a> <input type="hidden" name="bookId" value="${bookInfo.bookId}">
                             </form>
                             <ul>
-                                <li class="book_title">${bookInfo.tittle}</li>
+                                <li class="book_title">${bookInfo.title}</li>
                                 <li class="book_author">${bookInfo.author}(著)</li>
                                 <li class="book_publisher">出版社：${bookInfo.publisher}</li>
-                                <li class="book_publish_date">出版日：${bookInnfo.publish_date}</li>
+                                <li class="book_publish_date">出版日：${bookInnfo.publishDate}</li>
                             </ul>
                         </div>
                     </c:forEach>
