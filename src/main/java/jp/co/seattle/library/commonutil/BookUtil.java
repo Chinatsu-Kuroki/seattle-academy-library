@@ -27,7 +27,7 @@ public class BookUtil {
 	public List<String> checkBookInfo(BookDetailsInfo bookInfo) {
 
 		//TODO　各チェックNGの場合はエラーメッセージをリストに追加（タスク４）
-		List<String> errorList = new ArrayList<String>();
+		List<String> errorList = new ArrayList<>();
 		// 必須チェック
 
 		if (isEmptyBookInfo(bookInfo)) {
@@ -68,30 +68,6 @@ public class BookUtil {
 			return true;
 		}
 	}
-	/*まさやの
-	 * Date date =formatter.parse(publishDate);
-	String days = formatter.format(date);
-	if (publishDate.equals(days)) {
-	return true;
-	} else {
-	return false;
-	}
-	} catch (Exception p) {
-	p.printStackTrace();
-	return false;
-	 */
-
-	//publishDateをDate型に変換
-	/*String days = new SimpleDateFormat("yyyyMMdd").format(formatter.parse(publishDate));*/
-	// 変換したDate型をString型に変換
-	/* String days = String.valueOf(formatter);
-	   String dayyy = String.valueOf(days);*/
-	// String型に変換したものと引数で渡されたpublishDateと一致しているかをif文で確認
-	/*if(publishDate.equals(days)) {
-	   return true;
-	 }else {
-	   return false;
-	 }*/
 
 	/**
 	 * ISBNの形式チェック
@@ -101,7 +77,7 @@ public class BookUtil {
 	 */
 	private static boolean isValidIsbn(String isbn) {
 		//TODO　ISBNが半角数字で10文字か13文字であればtrue（タスク４）
-		if ((isbn.length() == 0 ) || (isbn.length() == 10 || isbn.length() == 13 ) && isbn.matches("^[0-9]+$")) {
+		if ((isbn.isEmpty()) || (isbn.length() == 10 || isbn.length() == 13) && isbn.matches("^[0-9]+$")) {
 			return false;
 		} else {
 			return true;
