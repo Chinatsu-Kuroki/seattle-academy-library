@@ -20,6 +20,7 @@ public class DeleteBookController {
 
 	@Autowired
 	private BooksService booksService;
+	
 	/**
 	 * 書籍情報を削除する
 	 * 
