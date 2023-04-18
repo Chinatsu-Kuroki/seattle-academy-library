@@ -68,7 +68,6 @@ public class BookUtil {
 			return true;
 		}
 	}
-
 	/**
 	 * ISBNの形式チェック
 	 * 
