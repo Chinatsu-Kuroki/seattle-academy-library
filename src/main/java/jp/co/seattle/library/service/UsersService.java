@@ -51,5 +51,20 @@ public class UsersService {
 			return null;
 		}
 	}
+	/**
+	 * ユーザー情報を登録する
+	 * 
+	 * @param userInfo ユーザー情報
+	 */
+	public void resetPasword(UserInfo userInfo) {
 
+		// SQL生成
+		String sql = "UPDATE users SET password = password ? , upd_date = nou(), WHERE email;​";
+		
+
+				//"INSERT INTO users (email, password,reg_date,upd_date) VALUES ('" + userInfo.getEmail() + "','"
+				//+ userInfo.getPassword() + "',now(),now()" + ")";
+
+		jdbcTemplate.update(sql);
+	}
 }

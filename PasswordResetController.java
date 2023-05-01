@@ -54,5 +54,6 @@ public String passwordReset(Locale locale, @RequestParam("email") String email,
 		model.addAttribute("errorMessage", "パスワードは8文字以上かつ半角英数字に設定してください。");
 		return "passwordReset";
 	}
+	
 }
 }
